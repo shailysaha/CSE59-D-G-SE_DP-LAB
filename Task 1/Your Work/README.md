@@ -256,10 +256,3 @@ The Bank Management System is a centralized web-based banking platform that mana
 * Relational database system
 * ACID transaction support
 * Backup and recovery system
-
-
-If you want, I can next:
-
-* Convert these into **Word (.docx) file**
-* Or make **proper UML diagram files (draw.io format)**
-* Or create **presentation slides (PPT)**
