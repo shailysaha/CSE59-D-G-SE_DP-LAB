@@ -1,8 +1,8 @@
-Software Requirements Specification (SRS)
+🏦 Software Requirements Specification (SRS)
 Bank Management System
 Preface
 
-This document provides the Software Requirements Specification (SRS) for the Bank Management System. It defines the system’s functionalities, performance criteria, security requirements, database structure, and overall system architecture required for development and deployment.
+This document provides the Software Requirements Specification (SRS) for the Bank Management System (BMS). It defines the system’s functionalities, performance criteria, security requirements, and overall system architecture necessary for development.
 
 Version History
 Version 1.0 – Initial Draft.
@@ -11,136 +11,119 @@ Version 1.2 – Refined system evolution and glossary.
 1. Introduction
 Purpose
 
-The Bank Management System is a web-based application designed to manage banking operations efficiently and securely. The system supports customer account management, transactions, deposits, withdrawals, loan processing, and reporting. It ensures secure and automated banking services with improved accuracy and reduced manual workload.
+The Bank Management System is a web-based application designed to manage banking operations such as account creation, deposits, withdrawals, fund transfers, loan management, and customer record handling in a secure and efficient way.
 
 Document Conventions
-
-This document follows the IEEE SRS standard, using:
-
-Must – Indicates mandatory requirements.
-Should – Indicates recommended features.
-May – Indicates optional enhancements.
+Must – Mandatory requirement
+Should – Recommended feature
+May – Optional feature
 Intended Audience and Reading Suggestions
-Bank Administrators & Managers – For system operation and control.
-Developers – For implementation guidance.
-Stakeholders & Business Analysts – To understand system capabilities.
-Testers & QA Teams – To validate system requirements.
+Bank Administrators
+Software Developers
+QA/Test Engineers
+Stakeholders
 Scope
 
 The system provides:
 
-Customer account management
-Deposit and withdrawal transactions
-Fund transfer between accounts
-Loan management system
-Account balance tracking
-Transaction history and reports
-Role-based access control
+Account management
+Transaction processing
+Loan management
+Customer and employee management
+Reporting and analytics
 Secure authentication system
 References
-IEEE Standard 830-1998 (Software Requirements Specification)
-Internal Banking Requirement Specification (BRS)
-Banking Security Standards Documentation
+IEEE SRS Standard 830-1998
+Database Design Principles
+Banking System Requirement Analysis
 2. Overall Description
 Product Perspective
 
-The Bank Management System is a standalone secure web-based application that can integrate with banking APIs, SMS/email notification systems, and financial reporting tools.
+The Bank Management System is a centralized web-based banking platform that manages all banking operations using a secure database system.
 
 Product Functions
-Account Management: Create, update, and manage customer accounts.
-Transaction Management: Deposit, withdraw, and transfer funds.
-Loan Management: Apply, approve, and track loans.
-Reporting & Analytics: Generate financial reports and transaction summaries.
-Security Management: Role-based access and secure authentication.
-Notifications: Alerts for transactions, approvals, and account updates.
+Account creation and management
+Deposit, withdrawal, and transfer system
+Loan application and approval system
+Transaction history tracking
+User role management
+Report generation
 User Classes and Characteristics
-Admin: Manages system settings, users, and security policies.
-Bank Manager: Approves loans, oversees accounts, and monitors transactions.
-Cashier/Teller: Handles deposits, withdrawals, and customer transactions.
-Customer: Views balance, transaction history, and performs transfers.
+Admin: Full control over system and users
+Employee: Handles banking operations
+Customer: Uses banking services
 Operating Environment
-Web-based application (Chrome, Firefox, Edge)
-Cloud-based or on-premise server
-Database: MySQL / MongoDB (depending on implementation)
+Web-based system (Chrome, Firefox, Edge)
+Backend: Java / PHP / Node.js
+Database: MySQL / PostgreSQL
+Cloud or local server
 Design and Implementation Constraints
-Must comply with banking security standards
-Must ensure data encryption and secure communication (HTTPS)
-Must support audit logs for all transactions
-Must handle concurrent users safely
+Must follow banking security standards
+Encrypted data storage required
+High availability system required
 Assumptions and Dependencies
-Stable internet connection required
-SMS/Email gateway for notifications
-Secure database hosting environment available
+Internet connection required
+SMS/Email notification services may be used
+Third-party payment integration may be added later
 3. System Requirements Specification
-3.1 Functional Requirements
+Functional Requirements
 User Authentication
-The system must allow users to register and log in.
-The system must support role-based authentication (Admin, Manager, Teller, Customer).
-The system must support password recovery.
+System must allow login and registration
+Role-based access (Admin, Employee, Customer) must be enforced
+Password recovery must be available
 Account Management
-The system must allow creation of new bank accounts.
-The system must allow updating and closing accounts.
-The system must store customer details securely.
+Customers must be able to create accounts
+Employees/Admin must manage accounts
+Accounts can be updated or closed
 Transaction Management
-The system must allow deposits and withdrawals.
-The system must allow fund transfers between accounts.
-The system must maintain transaction history.
+System must support deposit and withdrawal
+System must support fund transfers
+Transaction history must be stored
 Loan Management
-Customers must be able to apply for loans.
-Managers must approve or reject loan applications.
-The system must track loan repayment status.
-Reporting & Analytics
-The system must generate account and transaction reports.
-Reports must be exportable in PDF and CSV formats.
-The system must show daily/monthly financial summaries.
-Notifications
-The system must send alerts for transactions.
-The system must notify loan approvals/rejections.
-The system may send email/SMS updates.
-3.2 Non-Functional Requirements
-Performance Requirements
-The system must support 1000+ concurrent users.
-Transactions must be processed in real time.
-Response time must be under 3 seconds.
-Security Requirements
-The system must use encrypted passwords.
-The system must use HTTPS secure communication.
-Role-based access control must be enforced.
-All transactions must be logged (audit trail).
-Usability Requirements
-The system must have a simple and user-friendly interface.
-The system must support responsive design.
-The system should be accessible on multiple devices.
-Reliability and Availability
-The system must ensure 99.9% uptime.
-Backup and recovery mechanisms must be implemented.
-System must prevent data loss during failures.
-Maintainability and Support
-The system must follow modular architecture.
-The system must include logging and debugging tools.
-The system should support future updates easily.
+Customers must apply for loans
+Admin must approve/reject loans
+Loan status must be trackable
+Reporting
+Admin must generate financial reports
+Reports must be exportable (PDF/CSV)
+Non-Functional Requirements
+Performance
+System must support 1000+ users
+Transactions must process within 2–3 seconds
+Security
+Role-based authentication required
+Data encryption must be implemented
+Secure login system required
+Usability
+User-friendly interface required
+Responsive design required
+Reliability
+99.9% uptime required
+Backup and recovery system required
+Maintainability
+Modular design required
+Logging system must be implemented
 Portability
-The system must run on Windows, Linux, and macOS (via browser).
-The system must support cloud deployment.
+Works on Windows, Linux, Mac
+Cloud deployment supported
 4. System Models
-ENTITY-RELATIONSHIP DIAGRAM <img src="ee.png">
 
+> * **ENTITY-RELATIONSHIP DIAGRAM** <img src="er.png">
 5. System Evolution
 Assumptions
-AI fraud detection may be added in future.
-Mobile banking app may be introduced.
-Integration with ATM systems may be required.
+AI-based fraud detection may be added
+Mobile banking app may be developed
+Payment gateway integration may be included
 Expected Changes
-AI-based fraud detection system
-Mobile application support
-Integration with digital payment gateways
-Advanced financial analytics
+Online payment system integration
+Biometric authentication
+AI-based transaction monitoring
 6. Appendices
 Hardware Requirements
-Secure cloud server infrastructure
-High-performance database server
-Backup storage system
+Cloud server infrastructure
+Secure database server
+Load balanced backend
 Database Requirements
-Must maintain relational integrity
-Must support secure financial transactions
-Must include audit logs for all activities
+Relational database system
+ACID transaction support
+Backup and recovery system
