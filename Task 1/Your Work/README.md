@@ -221,7 +221,7 @@ The Bank Management System is a centralized web-based banking platform that mana
 
 > **Entity Relationship Diagram**
 
-<img src="er.png">
+<img src="ee.png">
 
 ## 5. System Evolution
 
