@@ -1,226 +1,147 @@
 Software Requirements Specification (SRS)
-WorkSync – Workflow & Project Management System
+Bank Management System
 Preface
 
-This document provides the Software Requirements Specification (SRS) for the WorkSync system. It defines the system functionalities, performance criteria, security requirements, database structure, and system models required for development and deployment.
+This document provides the Software Requirements Specification (SRS) for the Bank Management System. It defines the system’s functionalities, performance criteria, security requirements, database structure, and overall system architecture required for development and deployment.
 
 Version History
-Version	Date	Description
-1.0	Initial	Created base SRS document
-1.1	Updated	Added non-functional requirements
-1.2	Final Draft	Added diagrams and database model
+Version 1.0 – Initial Draft.
+Version 1.1 – Added non-functional requirements and system models.
+Version 1.2 – Refined system evolution and glossary.
 1. Introduction
-1.1 Purpose
+Purpose
 
-The WorkSync system is a web-based workflow and project management platform designed to improve organizational productivity by simplifying:
+The Bank Management System is a web-based application designed to manage banking operations efficiently and securely. The system supports customer account management, transactions, deposits, withdrawals, loan processing, and reporting. It ensures secure and automated banking services with improved accuracy and reduced manual workload.
 
-Task assignment
-Team collaboration
-Real-time monitoring
-Reporting and analytics
-Resource management
-1.2 Document Conventions
-Keyword	Meaning
-Must	Mandatory requirement
-Should	Recommended feature
-May	Optional feature
-1.3 Intended Audience
-Audience	Purpose
-Developers	System implementation
-Project Managers	Project planning and tracking
-Stakeholders	System understanding
-Testers	Requirement validation
-Analysts	Requirement analysis
-1.4 Scope
+Document Conventions
+
+This document follows the IEEE SRS standard, using:
+
+Must – Indicates mandatory requirements.
+Should – Indicates recommended features.
+May – Indicates optional enhancements.
+Intended Audience and Reading Suggestions
+Bank Administrators & Managers – For system operation and control.
+Developers – For implementation guidance.
+Stakeholders & Business Analysts – To understand system capabilities.
+Testers & QA Teams – To validate system requirements.
+Scope
 
 The system provides:
 
-User authentication & authorization
-Task assignment & tracking
-Project management
-Collaboration tools
-Notifications system
-Reporting & analytics dashboard
-File sharing system
-1.5 References
-IEEE Std 830-1998
-MongoDB Documentation
-MERN Stack Documentation
-Internal BRS Document
+Customer account management
+Deposit and withdrawal transactions
+Fund transfer between accounts
+Loan management system
+Account balance tracking
+Transaction history and reports
+Role-based access control
+Secure authentication system
+References
+IEEE Standard 830-1998 (Software Requirements Specification)
+Internal Banking Requirement Specification (BRS)
+Banking Security Standards Documentation
 2. Overall Description
-2.1 Product Perspective
+Product Perspective
 
-WorkSync is a standalone cloud-based web application that may integrate with external tools such as:
+The Bank Management System is a standalone secure web-based application that can integrate with banking APIs, SMS/email notification systems, and financial reporting tools.
 
-Slack
-Microsoft Teams
-Google Workspace
-2.2 Product Functions
-Core Functions
-User management system
-Task lifecycle management
-Project tracking system
-Reporting and analytics
-Collaboration workspace
-Notification system
-2.3 User Classes
-User Type	Responsibilities
-Admin	System control, user management
-Manager	Project & task assignment
-Employee	Task execution & updates
-2.4 Operating Environment
-Component	Technology
-Frontend	React.js
-Backend	Node.js + Express
-Database	MongoDB
-Hosting	Cloud Server
-Browser	Chrome, Firefox, Edge
-2.5 Constraints
-Must follow security standards
-Must support scalability
-Internet required
-Cloud deployment required
-2.6 Assumptions
-Stable internet connection
-Email service available
-MongoDB cloud access available
-3. Specific Requirements
+Product Functions
+Account Management: Create, update, and manage customer accounts.
+Transaction Management: Deposit, withdraw, and transfer funds.
+Loan Management: Apply, approve, and track loans.
+Reporting & Analytics: Generate financial reports and transaction summaries.
+Security Management: Role-based access and secure authentication.
+Notifications: Alerts for transactions, approvals, and account updates.
+User Classes and Characteristics
+Admin: Manages system settings, users, and security policies.
+Bank Manager: Approves loans, oversees accounts, and monitors transactions.
+Cashier/Teller: Handles deposits, withdrawals, and customer transactions.
+Customer: Views balance, transaction history, and performs transfers.
+Operating Environment
+Web-based application (Chrome, Firefox, Edge)
+Cloud-based or on-premise server
+Database: MySQL / MongoDB (depending on implementation)
+Design and Implementation Constraints
+Must comply with banking security standards
+Must ensure data encryption and secure communication (HTTPS)
+Must support audit logs for all transactions
+Must handle concurrent users safely
+Assumptions and Dependencies
+Stable internet connection required
+SMS/Email gateway for notifications
+Secure database hosting environment available
+3. System Requirements Specification
 3.1 Functional Requirements
 User Authentication
-Register / Login / Logout
-Password recovery
-Role-based access control
-Task Management
-Create tasks
-Assign tasks
-Update task status
-Track progress
-Notifications on updates
-Project Management
-Create projects
-Assign tasks to projects
-Monitor deadlines
-Track milestones
+The system must allow users to register and log in.
+The system must support role-based authentication (Admin, Manager, Teller, Customer).
+The system must support password recovery.
+Account Management
+The system must allow creation of new bank accounts.
+The system must allow updating and closing accounts.
+The system must store customer details securely.
+Transaction Management
+The system must allow deposits and withdrawals.
+The system must allow fund transfers between accounts.
+The system must maintain transaction history.
+Loan Management
+Customers must be able to apply for loans.
+Managers must approve or reject loan applications.
+The system must track loan repayment status.
 Reporting & Analytics
-Generate reports
-Export PDF/CSV
-View analytics dashboard
-Collaboration Tools
-File sharing
-Notes system
-Team communication
+The system must generate account and transaction reports.
+Reports must be exportable in PDF and CSV formats.
+The system must show daily/monthly financial summaries.
 Notifications
-Task assignment alerts
-Deadline reminders
-Status update notifications
+The system must send alerts for transactions.
+The system must notify loan approvals/rejections.
+The system may send email/SMS updates.
 3.2 Non-Functional Requirements
-Performance
-Supports 500+ users
-Real-time updates
-Response time < 3 seconds
-Security
-JWT authentication
-Encrypted passwords
-HTTPS communication
-Role-based access
-Usability
-Simple UI
-Responsive design
-Accessibility support
-Reliability
-99.9% uptime
-Auto backup system
-Fault recovery system
-Maintainability
-Modular architecture
-Logging system
-Easy updates
+Performance Requirements
+The system must support 1000+ concurrent users.
+Transactions must be processed in real time.
+Response time must be under 3 seconds.
+Security Requirements
+The system must use encrypted passwords.
+The system must use HTTPS secure communication.
+Role-based access control must be enforced.
+All transactions must be logged (audit trail).
+Usability Requirements
+The system must have a simple and user-friendly interface.
+The system must support responsive design.
+The system should be accessible on multiple devices.
+Reliability and Availability
+The system must ensure 99.9% uptime.
+Backup and recovery mechanisms must be implemented.
+System must prevent data loss during failures.
+Maintainability and Support
+The system must follow modular architecture.
+The system must include logging and debugging tools.
+The system should support future updates easily.
 Portability
-Cross-platform support
-Browser compatible
-Cloud deployable
-4. System Models & Diagrams
-4.1 Context Diagram
-Admin
-  |
-  v
-WorkSync System
- ^    ^     ^
- |    |     |
-User Manager Employee
-4.2 Use Case Diagram
-Admin → Manage users, roles
-Manager → Create project, assign tasks
-Employee → Update tasks, upload files
-4.3 Activity Diagram
-Login → Dashboard → Task Assignment → Work Update → Report Generation → End
-4.4 Sequence Diagram
-Manager → System → Create Task
-System → Employee → Notify
-Employee → System → Update Status
-System → Database → Save Data
-4.5 State Diagram
-Pending → In Progress → Completed
-        ↘ Overdue
-4.6 ER Diagram
-Users → Projects → Tasks → Notifications
-4.7 N-Tier Architecture Diagram (NEW)
-(Add Diagram Image Here)
-<img src="images/ee">
-Architecture Layers
-Presentation Layer (Frontend - React.js)
-Business Logic Layer (Backend - Node.js)
-Data Layer (MongoDB Database)
-4.8 System Architecture Overview
-Frontend (React)
-      ↓
-Backend (Node.js API)
-      ↓
-Database (MongoDB)
-5. Database Design
-Users Table
-Field	Type
-id	ObjectId
-name	String
-email	String
-password	String
-role	String
-Projects Table
-Field	Type
-id	ObjectId
-title	String
-deadline	Date
-managerId	ObjectId
-Tasks Table
-Field	Type
-id	ObjectId
-title	String
-status	String
-projectId	ObjectId
-assignedTo	ObjectId
-Notifications Table
-Field	Type
-id	ObjectId
-message	String
-userId	ObjectId
-6. System Evolution
-Future Enhancements
-AI task recommendation system
-Mobile application
-Video meeting integration
-Smart analytics dashboard
-Chatbot assistant
-7. Appendices
-Hardware Requirements
-Cloud server
-8GB+ RAM
-SSD storage
-Software Requirements
-Component	Technology
-Frontend	React.js
-Backend	Node.js
-Database	MongoDB
-Version Control	GitHub
-8. Conclusion
+The system must run on Windows, Linux, and macOS (via browser).
+The system must support cloud deployment.
+4. System Models
 
-WorkSync provides a complete workflow and project management solution that improves productivity, collaboration, and task tracking using a scalable cloud-based architecture.
+ENTITY-RELATIONSHIP DIAGRAM <img src="ee.png">
+
+5. System Evolution
+Assumptions
+AI fraud detection may be added in future.
+Mobile banking app may be introduced.
+Integration with ATM systems may be required.
+Expected Changes
+AI-based fraud detection system
+Mobile application support
+Integration with digital payment gateways
+Advanced financial analytics
+6. Appendices
+Hardware Requirements
+Secure cloud server infrastructure
+High-performance database server
+Backup storage system
+Database Requirements
+Must maintain relational integrity
+Must support secure financial transactions
+Must include audit logs for all activities
