@@ -123,7 +123,6 @@ Portability
 The system must run on Windows, Linux, and macOS (via browser).
 The system must support cloud deployment.
 4. System Models
-
 ENTITY-RELATIONSHIP DIAGRAM <img src="ee.png">
 
 5. System Evolution
