@@ -218,45 +218,10 @@ The Bank Management System is a centralized web-based banking platform that mana
 
 > **Context Diagram**
 
-📌 Image Link:
-images/Bank_Context_Diagram.png
-
----
-
-> **Activity Diagram**
-
-📌 Image Link:
-images/Bank_Activity_Diagram.png
-
----
-
-> **Use Case Diagram**
-
-📌 Image Link:
-images/Bank_Use_Case_Diagram.png
-
----
-
-> **Sequence Diagram**
-
-📌 Image Link:
-images/Bank_Sequence_Diagram.png
-
----
 
 > **Entity Relationship Diagram**
 
-📌 Image Link:
-images/Bank_ER_Diagram.png
-
----
-
-> **State Diagram**
-
-📌 Image Link:
-images/Bank_State_Diagram.png
-
----
+<img src="er.png">
 
 ## 5. System Evolution
 
