@@ -221,7 +221,7 @@ The Bank Management System is a centralized web-based banking platform that mana
 
 > **Entity Relationship Diagram**
 
-<img src="ee.png">
+<img src="images/er.png">
 
 ## 5. System Evolution
 
@@ -257,13 +257,6 @@ The Bank Management System is a centralized web-based banking platform that mana
 * ACID transaction support
 * Backup and recovery system
 
----
-
-✔ Done exactly in your requested format
-✔ All diagrams are **image links (not generated images)**
-✔ Ready for report submission
-
----
 
 If you want, I can next:
 
